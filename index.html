@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/acceuil.css">
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <style>
+        /* Style de base du site */
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Fenêtre modale */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <main>
+            <nav>
+                <div class="ico">
+                    <img class="img" src="/designs/icone.jpg" alt="Icone d'hopital" />
+                    <p>HOSTO <br> SIMULATOR</p>
+                </div>
+                <div class="onglet">
+                    <ul class="ul" id="sidemenu">
+                        <li><a href="#">Acceuil</a></li>
+                        <li><a href="simulateur.html">Soumettre</a></li>
+                        <li><a href="conseil.html">Conseil</a></li>
+                        <li><a href="apropos.html">Apropos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <i class="fa-utility fa-times" onclick="closemenu()">x</i>
+                    </ul>
+                    <i class="fa-utility fa-semibold fa-bars" onclick="openmenu()">=</i>
+                </div>
+            </nav>
+        </main>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.zIndex = "2"
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+            sidemenu.style.zIndex = "-2"
+        }
+    </script>
+    <div class="defile">
+        <div class="slides" id="slides">
+            <img src="/designs/cardiologue.jpg" alt="Image de cardiologue">
+            <img src="/designs/genicologue.jpeg" alt=" Iage génicologie">
+            <img src="/designs/medecin.jpg" alt="Image de médecin">
+            <img src="/designs/neurologue.jpg" alt="Image de neurologue">
+            <!-- Images clonnés pour creer un défilement fluide et illusoire -->
+            <img src="/designs/cardiologue.jpg" alt="Image de cardiologue">
+            <img src="/designs/genicologue.jpeg" alt=" Iage génicologie">
+            <img src="/designs/medecin.jpg" alt="Image de médecin">
+            <img src="/designs/neurologue.jpg" alt="Image de neurologue">
+        </div>
+    </div>
+    <script lang="javascript">
+        const slides = document.getElementById('slides');
+        const images = slides.querySelectorAll('img');
+        const imageCount = images.length / 2; // Nombre d'images originales
+        let index = 0;
+
+        setInterval(() => {
+            index++;
+            slides.style.transition = 'transform 0.5s ease-in-out';
+            slides.style.transform = `translateX(-${index * 100}vw)`;
+
+            // Quand on atteint la fin des images "clonées", on revient au début
+            if (index === imageCount) {
+                // Attendre la fin de la transition pour "téléporter"
+                setTimeout(() => {
+                    slides.style.transition = 'none'; // Retire l'animation
+                    slides.style.transform = 'translateX(0)';
+                    index = 0;
+                }, 500); // doit correspondre à la durée de transition CSS
+            }
+        }, 3000); // 3 secondes entre chaque slide
+    </script>
+    <!-- Bouton pour ouvrir la fenêtre -->
+    <button onclick="openModal()">S'inscrire</button>
+
+    <!-- Fenêtre modale -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Inscription</h2>
+            <form id="signup-form">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("modal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        document.getElementById("signup-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Empêche l'envoi réel
+            alert("Inscription envoyée !");
+            closeModal();
+        });
+    </script>
+
+    <section class="hero">
+        <a href="simulateur.html" class="btn noir">Commencer la simulation</a>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h3> Analyse rapide</h3>
+            <p>Décrivez vos symptômes, nous vous guidons vers des pistes fiables.</p>
+        </div>
+        <div class="feature">
+            <h3> Conseils utiles</h3>
+            <p>Recevez des conseils simples pour améliorer votre bien-être.</p>
+        </div>
+        <div class="feature">
+            <h3> Données respectées</h3>
+            <p>Vos informations restent confidentielles et ne sont jamais enregistrées.</p>
+        </div>
+    </section>
+    <section class="a">
+        <a href="simulateur.html" class="btn">Lancer la simulation</a>
+        <a href="conseil.html" class="btn-secondary">Voir les conseils santé</a>
+    </section>
+    <div class="body">
+        <p>&copy; 2025 SympCheck - Simulation de symptômes et conseils santé.</p>
+        <h1>Renseignez-vous</h1>
+        <p>Quelques renseignements sur des spécialistes recommandés pour vos problèmes de santé</p>
+        <footer>
+            <main>
+                <div class="specialiste">
+                    <h2>Medecine Generalistes</h2>
+                    <p>Les médecins généralistes sont présents dans tous les hôpitaux publics de Douala, notamment </p>
+                    <ul>
+                        <li>Hôpital Général de Douala (HGD), Quartier Beedi, Douala</li>
+                        <li>Hôpital Laquintinie, Avenue du Dr Jamot, AKWA</li>
+                        <li>Hôpital Gynéco-Obstétrique et Pédiatrique de Douala (HGOPED), Douala</li>
+                    </ul>
+                </div>
+                <div class="specialiste">
+                    <h2> Pneumologues </h2>
+                    <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Bertrand Hugo Mbatchou Ngahane</p>
+                    <ul>
+                        <li>Spécialités : Pneumologie, Allergologie, Tabacologie, chef de l'unité de Pneumologie</li>
+                        <li>Établissements : Hôpital Général de Douala, Polyclinic Bonanjo, Clinique des Roseaux (Akwa)</li>
+                        <li>Contact : <a href="tel:+237 233 500 101">Dr.Bertrand Mbatchou : +237 233 500 101</a> / <a href="tel:+237 699 871 424">+237 699 871 424</a> </li>
+                    </ul>
+                    <p>Envoyé un mail : <a href="mailto=pneumologiehgd@hgdcam.com">pneumologiehgd@hgdcam.com</a></p>
+                </div>
+            </main>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

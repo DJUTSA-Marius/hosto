@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <link rel="stylesheet" href="/style/contact.css">
+</head>
+
+<body>
+    <div class="nav">
+        <main>
+            <nav>
+                <div class="ico">
+                    <img class="img" src="/designs/icone.jpg" alt="Icone d'hopital" />
+                    <p>HOSTO <br> SIMULATOR</p>
+                </div>
+                <div class="onglet">
+                    <ul class="ul" id="sidemenu">
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="simulateur.html">Soumettre</a></li>
+                        <li><a href="conseil.html">Conseil</a></li>
+                        <li><a href="apropos.html">Apropos</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <i class="fa-utility fa-times" onclick="closemenu()">x</i>
+                    </ul>
+                    <i class="fa-utility fa-semibold fa-bars" onclick="openmenu()">=</i>
+                </div>
+            </nav>
+        </main>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.zIndex = "2"
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+            sidemenu.style.zIndex = "-2"
+        }
+    </script>
+    <section class="contact-header">
+        <h1>Contactez-nous</h1>
+        <p>Une question, une suggestion ou un souci ? Nous sommes à votre écoute.</p>
+    </section>
+    <section class="contact-form">
+        <form action="traitement.php" method="POST">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+    <section class="contact-rgpd">
+        <p>Les informations envoyées sont traitées en toute confidentialité. Nous ne collectons aucune donnée médicale personnelle.</p>
+    </section>
+    <div class="body">
+        <h1>Renseignez-vous</h1>
+        <p>Quelques renseignements sur des spécialistes recommandés pour vos problèmes de santé</p>
+        <footer>
+            <main>
+                <div class="specialiste">
+                    <h2>Medecine Generalistes</h2>
+                    <p>Les médecins généralistes sont présents dans tous les hôpitaux publics de Douala, notamment </p>
+                    <ul>
+                        <li>Hôpital Général de Douala (HGD), Quartier Beedi, Douala</li>
+                        <li>Hôpital Laquintinie, Avenue du Dr Jamot, AKWA</li>
+                        <li>Hôpital Gynéco-Obstétrique et Pédiatrique de Douala (HGOPED), Douala</li>
+                    </ul>
+                </div>
+                <div class="specialiste">
+                    <h2> Pneumologues </h2>
+                    <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Bertrand Hugo Mbatchou Ngahane</p>
+                    <ul>
+                        <li>Spécialités : Pneumologie, Allergologie, Tabacologie, chef de l'unité de Pneumologie</li>
+                        <li>Établissements : Hôpital Général de Douala, Polyclinic Bonanjo, Clinique des Roseaux (Akwa)</li>
+                        <li>Contact : <a href="tel:+237 233 500 101">Dr.Bertrand Mbatchou : +237 233 500 101</a> / <a href="tel:+237 699 871 424">+237 699 871 424</a> </li>
+                    </ul>
+                    <p>Envoyé un mail : <a href="mailto=pneumologiehgd@hgdcam.com">pneumologiehgd@hgdcam.com</a></p>
+                </div>
+                <div class="specialiste">
+                    <h2> Pneumologues </h2>
+                    <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Bruno Tengang</p>
+                    <ul>
+                        <li>Spécialités : Pneumologie</li>
+                        <li>Établissement : Centre des Maladies Respiratoires de Douala, Adresse : Avenue de Gaulle, Bonanjo</li>
+                        <li>Contact : <a href="tel:+237 233 500 101">Dr. Bruno Tengang : +237 233 500 101</a> </li>
+                    </ul>
+                </div>
+                <div class="specialiste">
+                    <h2> Dermatologues </h2>
+                    <p>Les dermatologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Angélique Njeumen</p>
+                    <ul>
+                        <li>Spécialité : Dermatologie et Vénérologie, Poste : Chef de service de Dermatologie</li>
+                        <li>Établissement : Hôpital Laquintinie</li>
+                        <li>Adresse : Avenue du Dr Jamot, AKWA, Douala</li>
+                    </ul>
+                </div>
+            </main>
+        </footer>
+    </div>
+</body>
+
+</html>

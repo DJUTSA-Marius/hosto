@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <link rel="stylesheet" href="/style/simulateur.css">
+    <!-- <link rel="stylesheet" href="wo.css"> -->
+    <!-- <link rel="stylesheet" href="wo.js"> -->
+</head>
+
+<body>
+    <div class="nav">
+        <main>
+            <nav>
+                <div class="ico">
+                    <img class="img" src="/designs/icone.jpg" alt="Icone d'hopital" />
+                    <p>HOSTO <br> SIMULATOR</p>
+                </div>
+                <div class="onglet">
+                    <ul class="ul" id="sidemenu">
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="#">Soumettre</a></li>
+                        <li><a href="conseil.html">Conseil</a></li>
+                        <li><a href="apropos.html">Apropos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <i class="fa-utility fa-times" onclick="closemenu()">x</i>
+                    </ul>
+                    <i class="fa-utility fa-semibold fa-bars" onclick="openmenu()">=</i>
+                </div>
+            </nav>
+        </main>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.zIndex = "2"
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+            sidemenu.style.zIndex = "-2"
+        }
+    </script>
+    <header>
+        <h1>Simulateur de Rendez-vous Médicaux</h1>
+        <p>Identifiez les professionnels de santé à consulter selon vos symptômes.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Quel spécialiste consulter ?</h1>
+            <form id="symptomForm">
+                <label><input type="checkbox" name="symptom" value="fièvre"> Fièvre</label>
+                <label><input type="checkbox" name="symptom" value="toux persistante"> Toux persistante</label>
+                <label><input type="checkbox" name="symptom" value="douleur abdominale"> Douleur abdominale</label>
+                <label><input type="checkbox" name="symptom" value="problèmes de peau"> Problèmes de peau</label>
+                <label><input type="checkbox" name="symptom" value="stress/anxiété"> Stress / Anxiété</label>
+                <label><input type="checkbox" name="symptom" value="maux de tete"> Mot de tete</label>
+                <label><input type="checkbox" name="symptom" value="douleur thoracique">Douleur thoracique</label>
+                <label><input type="checkbox" name="symptom" value="fatigue chronique"> Fatigue chronique</label>
+                <label><input type="checkbox" name="symptom" value="vertiges"> Vertiges</label>
+                <label><input type="checkbox" name="symptom" value="douleur articulaire">Douleur articulaire</label>
+                <label><input type="checkbox" name="symptom" value="nausées"> Nausées</label>
+                <input type="submit" value="Voir les recommandations">
+            </form>
+
+            <div id="results" class="results hidden">
+                <h2>Spécialiste(s) recommandé(s) :</h2>
+                <ul id="recommendationList"></ul>
+            </div>
+        </div>
+
+        <script>
+            const recommandations = {
+                "fièvre": "Médecin généraliste",
+                "toux persistante": "Pneumologue",
+                "douleur abdominale": "Gastro-entérologue",
+                "problèmes de peau": "Dermatologue",
+                "stress/anxiété": "Psychologue",
+                "maux de tête": "Neurologue",
+                "douleur thoracique": "Cardiologue",
+                "fatigue chronique": "Médecin généraliste",
+                "vertiges": "ORL",
+                "douleur articulaire": "Rhumatologue",
+                "nausées": "Gastro-entérologue"
+            };
+
+            document.getElementById('symptomForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const selectedSymptoms = [...document.querySelectorAll('input[name="symptom"]:checked')]
+                    .map(checkbox => checkbox.value);
+
+                const recommended = selectedSymptoms
+                    .map(symptom => recommandations[symptom])
+                    .filter((value, index, self) => value && self.indexOf(value) === index);
+
+                const resultSection = document.getElementById('results');
+                const list = document.getElementById('recommendationList');
+                list.innerHTML = '';
+
+                if (recommended.length > 0) {
+                    recommended.forEach(pro => {
+                        const li = document.createElement('li');
+                        li.textContent = `→ ${pro}`;
+                        list.appendChild(li);
+                    });
+                    resultSection.classList.remove('hidden');
+                } else {
+                    list.innerHTML = '<li>Aucun symptôme sélectionné ou correspondance introuvable.</li>';
+                    resultSection.classList.remove('hidden');
+                }
+            });
+        </script>
+
+        <div class="body ">
+            <h1>Renseignez-vous</h1>
+            <p>Quelques renseignements sur des spécialistes recommandés pour vos problèmes de santé</p>
+            <footer>
+                <main>
+                    <div class="specialiste ">
+                        <h2>Medecine Generalistes</h2>
+                        <p>Les médecins généralistes sont présents dans tous les hôpitaux publics de Douala, notamment </p>
+                        <ul>
+                            <li>Hôpital Général de Douala (HGD), Quartier Beedi, Douala</li>
+                            <li>Hôpital Laquintinie, Avenue du Dr Jamot, AKWA</li>
+                            <li>Hôpital Gynéco-Obstétrique et Pédiatrique de Douala (HGOPED), Douala</li>
+                        </ul>
+                    </div>
+                    <div class="specialiste ">
+                        <h2> Pneumologues </h2>
+                        <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                        <p class="name ">Dr. Bertrand Hugo Mbatchou Ngahane</p>
+                        <ul>
+                            <li>Spécialités : Pneumologie, Allergologie, Tabacologie, chef de l'unité de Pneumologie</li>
+                            <li>Établissements : Hôpital Général de Douala, Polyclinic Bonanjo, Clinique des Roseaux (Akwa)</li>
+                            <li>Contact : <a href="tel:+237 233 500 101 ">Dr.Bertrand Mbatchou : +237 233 500 101</a> / <a href="tel:+237 699 871 424 ">+237 699 871 424</a> </li>
+                        </ul>
+                        <p>Envoyé un mail : <a href="mailto=pneumologiehgd@hgdcam.com ">pneumologiehgd@hgdcam.com</a></p>
+                    </div>
+                </main>
+            </footer>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <link rel="stylesheet" href="/style/apropos.css">
+</head>
+
+<body>
+    <div class="nav">
+        <main>
+            <nav>
+                <div class="ico">
+                    <img class="img" src="/designs/icone.jpg" alt="Icone d'hopital" />
+                    <p>HOSTO <br> SIMULATOR</p>
+                </div>
+                <div class="onglet">
+                    <ul class="ul" id="sidemenu">
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="simulateur.html">Soumettre</a></li>
+                        <li><a href="conseil.html">Conseil</a></li>
+                        <li><a href="#">Apropos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <i class="fa-utility fa-times" onclick="closemenu()">x</i>
+                    </ul>
+                    <i class="fa-utility fa-semibold fa-bars" onclick="openmenu()">=</i>
+                </div>
+            </nav>
+        </main>
+    </div>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.zIndex = "2"
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+            sidemenu.style.zIndex = "-2"
+        }
+    </script>
+    <section class="about-header">
+        <h1>À propos de HOSTO SIMULATOR</h1>
+        <p>Votre assistant de santé numérique pour comprendre vos symptômes en quelques clics.</p>
+    </section>
+    <section class="about-mission">
+        <h2>Notre mission</h2>
+        <p>
+            HOSTO SIMULATOR est une plateforme de simulation de symptômes conçue pour vous aider à mieux comprendre les signes que votre corps vous envoie. Notre objectif est de vous fournir une première orientation sur les pathologies possibles, afin de faciliter
+            la discussion avec un professionnel de santé.
+        </p>
+    </section>
+    <section class="about-how">
+        <h2>Comment ça fonctionne ?</h2>
+        <ul>
+            <li>Vous entrez vos symptômes</li>
+            <li>Notre système analyse votre situation</li>
+            <li>Vous obtenez des pistes probables pour la provenance de vos symptomes</li>
+            <li>Nous vous indiquons des médecins recommandés pour vos symptomes</li>
+        </ul>
+    </section>
+    <section class="about-warning">
+        <h2>Important</h2>
+        <p>
+            HOSTO SIMULATOR ne remplace en aucun cas une consultation médicale. Il s'agit d'un outil de simulation et de sensibilisation, pour tous vos symptômes persistant ou inquiétant. Et nous recommandons de consulter des professionnels de santé.
+        </p>
+    </section>
+    <section class="about-team">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+            HOSTO SIMULATOR est né d'un projet alliant technologie modernes, innovation technique, sociale et sensibilisation à la santé publique. Notre équipe est composée d'étudiant en développement, en santé, en designeur, en ressource humaine et developpement
+            sociale-écologic.
+        </p>
+    </section>
+    <section class="about-cta">
+        <a href="/simulateur.html" class="btn">Lancer la simulation</a>
+        <a href="/contact.html" class="btn-secondary">Nous contacter</a>
+    </section>
+
+
+    <div class="body">
+        <h1>Renseignez-vous</h1>
+        <p>Quelques renseignements sur des spécialistes recommandés pour vos problèmes de santé</p>
+        <footer>
+            <main>
+                <div class="specialiste">
+                    <h2>Medecine Generalistes</h2>
+                    <p>Les médecins généralistes sont présents dans tous les hôpitaux publics de Douala, notamment </p>
+                    <ul>
+                        <li>Hôpital Général de Douala (HGD), Quartier Beedi, Douala</li>
+                        <li>Hôpital Laquintinie, Avenue du Dr Jamot, AKWA</li>
+                        <li>Hôpital Gynéco-Obstétrique et Pédiatrique de Douala (HGOPED), Douala</li>
+                    </ul>
+                </div>
+                <div class="specialiste">
+                    <h2> Pneumologues </h2>
+                    <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Bertrand Hugo Mbatchou Ngahane</p>
+                    <ul>
+                        <li>Spécialités : Pneumologie, Allergologie, Tabacologie, chef de l'unité de Pneumologie</li>
+                        <li>Établissements : Hôpital Général de Douala, Polyclinic Bonanjo, Clinique des Roseaux (Akwa)</li>
+                        <li>Contact : <a href="tel:+237 233 500 101">Dr.Bertrand Mbatchou : +237 233 500 101</a> / <a href="tel:+237 699 871 424">+237 699 871 424</a> </li>
+                    </ul>
+                    <p>Envoyé un mail : <a href="mailto=pneumologiehgd@hgdcam.com">pneumologiehgd@hgdcam.com</a></p>
+                </div>
+            </main>
+        </footer>
+    </div>
+</body>
+
+</html>

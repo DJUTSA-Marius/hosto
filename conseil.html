@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <link rel="stylesheet" href="/style/conseil.css">
+</head>
+
+<body>
+    <div class="nav">
+        <main>
+            <nav>
+                <div class="ico">
+                    <img class="img" src="/designs/icone.jpg" alt="Icone d'hopital" />
+                    <p>HOSTO <br> SIMULATOR</p>
+                </div>
+                <div class="onglet">
+                    <ul class="ul" id="sidemenu">
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="simulateur.html">Soumettre</a></li>
+                        <li><a href="#">Conseil</a></li>
+                        <li><a href="apropos.html">Apropos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <i class="fa-utility fa-times" onclick="closemenu()">x</i>
+                    </ul>
+                    <i class="fa-utility fa-semibold fa-bars" onclick="openmenu()">=</i>
+                </div>
+            </nav>
+        </main>
+    </div>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.zIndex = "2"
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+            sidemenu.style.zIndex = "-2"
+        }
+    </script>
+    <section class="about-header">
+        <h1>Conseils Santé</h1>
+        <p>Des astuces simples pour mieux comprendre et prendre soin de votre santé au quotidien.</p>
+    </section>
+
+    <section class="advice-list">
+        <h2>Nos conseils</h2>
+
+        <article class="advice-item">
+            <h3>Restez bien hydraté(e)</h3>
+            <p>Boire de l'eau régulièrement aide à réguler la température du corps, favoriser la digestion et prévenir les maux de tête.</p>
+        </article>
+
+        <article class="advice-item">
+            <h3>Mangez équilibré</h3>
+            <p>Privilégiez les légumes, fruits, protéines maigres et limitez les produits transformés et sucrés.</p>
+        </article>
+
+        <article class="advice-item">
+            <h3>Dormez suffisamment</h3>
+            <p>Un bon sommeil est essentiel pour le système immunitaire, la mémoire et la concentration.</p>
+        </article>
+
+        <article class="advice-item">
+            <h3>Bougez chaque jour</h3>
+            <p>30 minutes d'activité physique par jour suffisent à améliorer votre forme physique et mentale.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Lavez-vous les mains régulièrement</h3>
+            <p>Pour prévenir la transmission de virus et de bactéries, lavez-vous les mains avec de l'eau et du savon pendant au moins 30 secondes.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Mangez 5 fruits et légumes par jour</h3>
+            <p>Riches en fibres, vitamines et minéraux, ils renforcent votre système immunitaire.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Faites de l'exercice phisique</h3>
+            <p> Une marche de 30 minutes par jour suffit à améliorer la circulation sanguine et réduire le stress.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Respecter votre rythme de sommeil</h3>
+            <p> Essayez de dormir entre 7 et 9 heures par nuit pour bien récupérer physiquement et mentalement.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Buvez suffisamment d'eau</h3>
+            <p> L'hydratation est essentielle au bon fonctionnement des organes, du cerveau, et de la digestion.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Prenez soin de votre santé mentale</h3>
+            <p> Accordez-vous des moments de détente. La méditation, la respiration ou la lecture peuvent aider à apaiser l’anxiété.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Evitez le tabac</h3>
+            <p> Le tabac est un facteur de risque majeur pour de nombreuses maladies, notamment respiratoires et cardiovasculaires</p>
+        </article>
+        <article class="advice-item">
+            <h3>Limitez les sucres ajoutés</h3>
+            <p> Trop de sucre augmente le risque de diabète, de fatigue chronique et de troubles cardiovasculaires.</p>
+        </article>
+        <article class="advice-item">
+            <h3>Protegez-vous du soleil</h3>
+            <p> Utilisez une crème solaire, portez un chapeau et évitez les heures les plus chaudes (12h-16h).</p>
+        </article>
+        <article class="advice-item">
+            <h3>Consultez regulierement un médecin</h3>
+            <p> Même sans symptôme, un suivi médical permet de prévenir de nombreuses maladies.</p>
+        </article>
+
+    </section>
+
+    <div class="body">
+        <h1>Renseignez-vous</h1>
+        <p>Quelques renseignements sur des spécialistes recommandés pour vos problèmes de santé</p>
+        <footer>
+            <main>
+                <div class="specialiste">
+                    <h2>Medecine Generalistes</h2>
+                    <p>Les médecins généralistes sont présents dans tous les hôpitaux publics de Douala, notamment </p>
+                    <ul>
+                        <li>Hôpital Général de Douala (HGD), Quartier Beedi, Douala</li>
+                        <li>Hôpital Laquintinie, Avenue du Dr Jamot, AKWA</li>
+                        <li>Hôpital Gynéco-Obstétrique et Pédiatrique de Douala (HGOPED), Douala</li>
+                    </ul>
+                </div>
+                <div class="specialiste">
+                    <h2> Pneumologues </h2>
+                    <p>Les pneumologues sont présents dans presque tous les hôpitaux publics de Douala, notamment </p>
+                    <p class="name">Dr. Bertrand Hugo Mbatchou Ngahane</p>
+                    <ul>
+                        <li>Spécialités : Pneumologie, Allergologie, Tabacologie, chef de l'unité de Pneumologie</li>
+                        <li>Établissements : Hôpital Général de Douala, Polyclinic Bonanjo, Clinique des Roseaux (Akwa)</li>
+                        <li>Contact : <a href="tel:+237 233 500 101">Dr.Bertrand Mbatchou : +237 233 500 101</a> / <a href="tel:+237 699 871 424">+237 699 871 424</a> </li>
+                    </ul>
+                    <p>Envoyé un mail : <a href="mailto=pneumologiehgd@hgdcam.com">pneumologiehgd@hgdcam.com</a></p>
+                </div>
+            </main>
+        </footer>
+    </div>
+</body>
+
+</html>

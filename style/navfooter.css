@@ -1,0 +1,120 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #42A5F5;
+    padding: 10px 50px;
+    /* border-radius: 15px; */
+}
+
+h1,
+h2 {
+    color: rgb(195, 176, 212);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+
+ul :hover {
+    color: rgba(42, 135, 235, 0.635);
+    transition: 100ms;
+}
+
+.ico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+.onglet a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.onglet a:hover {
+    border-bottom: 4px solid white;
+    transition-duration: 100ms;
+}
+
+.onglet {
+    margin: 0;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.body {
+    background-color: rgb(36, 35, 35);
+    color: rgb(255, 255, 255);
+    /* text-align: justify; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.specialiste {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    color: aqua;
+}
+
+nav .fa-utility {
+    display: none;
+}
+
+@media all and (max-width: 600px) {
+    nav .fa-utility {
+        display: block;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+    nav ul {
+        background-color: #42A5F5;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 70%;
+        padding-top: 50px;
+        z-index: -2;
+        transition: right 0.3s ease;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px;
+    }
+    nav ul .fa-utility {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+}
